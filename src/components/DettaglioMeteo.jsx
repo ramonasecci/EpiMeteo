@@ -5,7 +5,7 @@ import DettagliSettimana from "./DettagliSettimana";
 import DetailsDay from "./DetailsDay";
 import HeroToday from "./HeroToday";
 
-const DettaglioMeteo = () => {
+const DettaglioMeteo = (props) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState([]);
@@ -37,7 +37,6 @@ const DettaglioMeteo = () => {
     }
   }, [params.city]);
 
-  // Opzionale: estrai le coordinate per maggiore chiarezza
   const latitude = results[0]?.latitude || null;
   const longitude = results[0]?.longitude || null;
 

@@ -7,7 +7,9 @@ import Home from './components/Home';
 import DettaglioMeteo from './components/DettaglioMeteo';
 
 
+
 function App() {
+
 
   return (
     <div>
@@ -19,7 +21,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/DettaglioMeteo/:city" element={<DettaglioMeteo />} />
-
           </Routes>
         </main>
         <footer>
