@@ -5,6 +5,7 @@ import MyNavbar from './components/MyNavbar';
 import MyFooter from './components/MyFooter';
 import Home from './components/Home';
 import DettaglioMeteo from './components/DettaglioMeteo';
+import NotFound from './components/NotFound';
 
 
 
@@ -12,10 +13,10 @@ function App() {
 
   return (
 
-    <div className='my-bg-home '>
-      <div className='h-100'>
+    <div className='my-bg-home app-height'>
+      <div>
         <BrowserRouter>
-          <div className='d-flex flex-column justify-content-between h-100'>
+          <div className='d-flex flex-column justify-content-between'>
             <div>
               <header>
                 <MyNavbar />
@@ -24,10 +25,11 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/DettaglioMeteo/:city" element={<DettaglioMeteo />} />
+                  <Route path="*"  element={<NotFound />}/>
                 </Routes>
               </main>
             </div>
-            <footer className='footer'>
+            <footer >
               <MyFooter />
             </footer>
           </div>

@@ -45,7 +45,7 @@ const DetailsDay = (props) => {
     }, [results]);
 
     return (
-        <>
+        <div>
             <Row>
                 <Col>
                     {isLoading && <MySpinner />}
@@ -81,7 +81,7 @@ const DetailsDay = (props) => {
 
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

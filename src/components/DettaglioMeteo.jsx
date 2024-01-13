@@ -46,7 +46,7 @@ const DettaglioMeteo = (props) => {
   const longitude = results && results.length > 0 ? results[0].longitude : null;
 
   return (
-    <>
+    <div> 
       {latitude && longitude ? (
         <>
           <HeroToday today={oggi} city={location} />
@@ -64,7 +64,7 @@ const DettaglioMeteo = (props) => {
           )}
         </>
       )}
-    </>
+    </div>
   );
 };
 
