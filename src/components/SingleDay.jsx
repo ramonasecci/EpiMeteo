@@ -22,7 +22,7 @@ const SingleDay = (props) => {
                     <p>{getDayOfWeek(results.daily.time[i]).slice(0, 3)}&nbsp;</p>
                     <p>{formatDate(results.daily.time[i])}</p>
                 </div>
-                <div>
+                <div className='mb-3'>
                     {codtempo === 0 && 
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-brightness-high-fill text-warning" viewBox="0 0 16 16">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Row, Col } from 'react-bootstrap';
+import MySpinner from "./MySpinner";
 
 const DetailsDay = (props) => {
     const [error, setError] = useState(null);
@@ -47,7 +48,7 @@ const DetailsDay = (props) => {
         <>
             <Row>
                 <Col>
-                    {isLoading && <p>Caricamento...</p>}
+                    {isLoading && <MySpinner />}
                     {error && <p>Errore: {error}</p>}
                 </Col>
             </Row>

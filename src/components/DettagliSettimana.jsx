@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Row, Col } from 'react-bootstrap';
 import SingleDay from "./SingleDay";
+import MySpinner from "./MySpinner";
 
 const DettagliSettimana = (props) => {
     const [error, setError] = useState(null);
@@ -34,7 +35,7 @@ const DettagliSettimana = (props) => {
                 {results?.daily?.weather_code?.slice(0, 0 + props.dayShow).map((codtempo, i) => (
                     <SingleDay results={results} codtempo={codtempo} i={i} />
                 ))}
-                {isLoading && <p>Caricamento...</p>}
+                {isLoading && <MySpinner/>}
                 {error && <p>Errore: {error}</p>}
             </Row>
         </div>

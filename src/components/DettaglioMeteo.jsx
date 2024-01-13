@@ -4,18 +4,21 @@ import axios from "axios";
 import DettagliSettimana from "./DettagliSettimana";
 import DetailsDay from "./DetailsDay";
 import HeroToday from "./HeroToday";
+import DetailsHours from "./DetailsHours";
+import MySpinner from "./MySpinner";
+
 
 const DettaglioMeteo = (props) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState([]);
-  const [oggi, setOggi] = useState({})
-  const [location,setLocation] = useState(null)
+  const [oggi, setOggi] = useState({});
+  const [location, setLocation] = useState(null);
   const params = useParams();
 
   const getNewToday = (today) => {
-    setOggi(today)
-  }
+    setOggi(today);
+  };
 
   useEffect(() => {
     const fetchCoordinate = async () => {
@@ -35,24 +38,32 @@ const DettaglioMeteo = (props) => {
 
     if (params.city) {
       fetchCoordinate();
-     setLocation(params.city)
+      setLocation(params.city);
     }
   }, [params.city]);
 
-  const latitude = results[0]?.latitude || null;
-  const longitude = results[0]?.longitude || null;
+  const latitude = results && results.length > 0 ? results[0].latitude : null;
+  const longitude = results && results.length > 0 ? results[0].longitude : null;
 
   return (
     <>
-      {latitude && longitude && (
+      {latitude && longitude ? (
         <>
-          <HeroToday today={oggi} city={location}/>
-          <DettagliSettimana latitudine={latitude} longitudine={longitude} dayShow={6}/>
-          <DetailsDay latitudine={latitude} longitudine={longitude} getNewToday={getNewToday}/>
+          <HeroToday today={oggi} city={location} />
+          <DetailsHours latitudine={latitude} longitudine={longitude} />
+          <DettagliSettimana latitudine={latitude} longitudine={longitude} dayShow={6} />
+          <DetailsDay latitudine={latitude} longitudine={longitude} getNewToday={getNewToday} />
+        </>
+      ) : (
+        <>
+          {isLoading && <MySpinner/>}
+          {error ? (
+            <h2 className="d-flex justify-content-center text-white">Errore: {error}</h2>
+          ) : (
+            <h2 className="d-flex justify-content-center text-white">Città non disponibile o non trovata</h2>
+          )}
         </>
       )}
-      {isLoading && <p>Caricamento...</p>}
-      {error && <p>Errore: {error}</p>}
     </>
   );
 };

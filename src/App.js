@@ -11,21 +11,28 @@ import DettaglioMeteo from './components/DettaglioMeteo';
 function App() {
 
   return (
-    <div className='my-bg-home app-height'>
-      <BrowserRouter>
-        <header>
-          <MyNavbar />
-        </header>
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/DettaglioMeteo/:city" element={<DettaglioMeteo />} />
-          </Routes>
-        </main>
-        <footer>
-          <MyFooter />
-        </footer>
-      </BrowserRouter>
+
+    <div className='my-bg-home '>
+      <div className='h-100'>
+        <BrowserRouter>
+          <div className='d-flex flex-column justify-content-between h-100'>
+            <div>
+              <header>
+                <MyNavbar />
+              </header>
+              <main>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/DettaglioMeteo/:city" element={<DettaglioMeteo />} />
+                </Routes>
+              </main>
+            </div>
+            <footer className='footer'>
+              <MyFooter />
+            </footer>
+          </div>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

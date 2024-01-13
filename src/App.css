@@ -2,15 +2,12 @@ html,
 body {
   height: 100%;
   margin: 0;
+  overflow: scroll; 
 }
 
 .my-bg-home {
   height: 100vh;
-
-
   background-image: linear-gradient(0deg, #55948c 0%, #265e7d 66%);
-
-
 }
 
 .custom-font {
@@ -31,10 +28,10 @@ body {
 }
 
 .footer {
+  background-color: #265E7D;
   color: white;
   text-align: center;
   padding: 20px;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }

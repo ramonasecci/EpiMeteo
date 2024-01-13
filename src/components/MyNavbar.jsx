@@ -8,7 +8,7 @@ const MyNavbar = () => {
     return (
         <>
             <Navbar className="bg-body-light">
-                <Container className="d-flex justify-content-between">
+                <Container className="d-flex justify-content-between align-content-center">
                     <Navbar.Brand as={Link} to="/" className="d-flex justify-content-between">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cloud-sun text-warning" viewBox="0 0 16 16">
                             <path d="M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .624.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .51-.375A3.5 3.5 0 0 1 7 8m4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z" />

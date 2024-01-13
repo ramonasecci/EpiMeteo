@@ -10,7 +10,7 @@ const Home = () => {
     };
 
     return (
-        <div>
+        <div className="mt-5">
             <Row className="justify-content-center">
                 <Col xs={4} className="my-card-custom m-3 d-flex justify-content-around my-animation-card" onClick={() => handleClick("Roma")}>
                     <h2 className=" text-white">Roma</h2>
@@ -22,9 +22,9 @@ const Home = () => {
                 </Col>
             </Row>
             <Row className="justify-content-center">
-                <Col xs={4} className="my-card-custom m-3 d-flex justify-content-around my-animation-card" onClick={() => handleClick("Tokyo")}>
-                    <h2 className="text-white">Tokyo</h2>
-                    <DettagliSettimana latitudine="35.6895" longitudine="139.69171" dayShow={1} />
+                <Col xs={4} className="my-card-custom m-3 d-flex justify-content-around my-animation-card" onClick={() => handleClick("Tadasuni")}>
+                    <h2 className="text-white">Tadasuni</h2>
+                    <DettagliSettimana latitudine="40.10995" longitudine="8.88353" dayShow={1} />
                 </Col>
                 <Col xs={4} className="my-card-custom m-3 d-flex justify-content-around my-animation-card" onClick={() => handleClick("Londra")}>
                     <h2 className="text-white">Londra</h2>

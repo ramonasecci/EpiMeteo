@@ -1,16 +1,12 @@
 const MyFooter = () => {
 
     return (
-        <div>
-            <p>
-                <div class="footer">
-                    <p>&copy; 2024 EpiMeteo</p>
-                    <p>
-                        <a href="#">Termini e condizioni</a>
-                        <a href="#">Privacy</a>
-                        <a href="#">Contattaci</a>
-                    </p>
-                </div>
+        <div className="footer d-flex justify-content-center">
+            <p className="me-2 mb-0">&copy; 2024 EpiMeteo</p>
+            <p className="mb-0">
+                <a href="#">Termini e condizioni</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contattaci</a>
             </p>
         </div>
     )
