@@ -27,7 +27,7 @@ const SearchCity = () => {
             <Form.Group>
               <Form.Control
                 type="text"
-                placeholder="Search City"
+                placeholder="Ricerca località"
                 value={searchQuery}
                 onChange={(e) => (setSearchQuery(e.target.value))}
                 onKeyDown={handleKeyDown}

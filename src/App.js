@@ -10,9 +10,8 @@ import DettaglioMeteo from './components/DettaglioMeteo';
 
 function App() {
 
-
   return (
-    <div>
+    <div className='my-bg-home app-height'>
       <BrowserRouter>
         <header>
           <MyNavbar />

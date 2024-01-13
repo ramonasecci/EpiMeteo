@@ -10,6 +10,7 @@ const DettaglioMeteo = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState([]);
   const [oggi, setOggi] = useState({})
+  const [location,setLocation] = useState(null)
   const params = useParams();
 
   const getNewToday = (today) => {
@@ -34,6 +35,7 @@ const DettaglioMeteo = (props) => {
 
     if (params.city) {
       fetchCoordinate();
+     setLocation(params.city)
     }
   }, [params.city]);
 
@@ -44,8 +46,8 @@ const DettaglioMeteo = (props) => {
     <>
       {latitude && longitude && (
         <>
-          <HeroToday today={oggi} />
-          <DettagliSettimana latitudine={latitude} longitudine={longitude} />
+          <HeroToday today={oggi} city={location}/>
+          <DettagliSettimana latitudine={latitude} longitudine={longitude} dayShow={6}/>
           <DetailsDay latitudine={latitude} longitudine={longitude} getNewToday={getNewToday}/>
         </>
       )}
